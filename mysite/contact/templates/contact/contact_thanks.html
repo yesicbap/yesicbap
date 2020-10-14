@@ -1,0 +1,25 @@
+{% extends 'core/core.html' %}
+{% load static %}
+
+
+{% block title %} contact home {% endblock title %}
+
+{% block content %}
+<div class="container ">
+
+    <img src="{% static 'image/path426.png' %}" class="img-fluid" alt="Responsive image">
+
+    
+<div class="jumbotron">
+    <h1 class="display-4">Thank you for filling out your information!</h1>
+    <p class="lead">We’ve sent you an email with [the coupon code/your file download link/your voucher] at the email address you provided. Please enjoy, and let us know if there’s anything else we can help you with.</p>
+    <hr class="my-4">
+    <p>The yesicbap Team</p>
+    <a class="btn btn-primary btn-lg" href="{% url 'home' %}" role="button">goto Home</a>
+  </div>
+ 
+</div>
+{% endblock content %}
+
+
+

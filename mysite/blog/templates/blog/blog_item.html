@@ -1,0 +1,56 @@
+{% extends 'core/core.html' %}
+{% load static %}
+
+
+{% block title %} blog home {% endblock title %}
+
+{% block content %}
+<div class="container bg-light" style="margin-bottom: 4px; margin-top: 4px;">
+  <h1>{{blog.title}}</h1>
+  <p>by {{blog.auther}}</p>
+    <div class="row">
+        <div class="card">
+            <h5 class="card-header">Featured</h5>
+            <div class="card-body">
+              <h5 class="card-title">clap : {{blog.clap}}</h5>
+              <p class="card-text">{{blog.description}}</p>
+              <p>Refrences: {{blog.blog_refrences}}</p>
+              <a href="{% url 'blog_home' %}"><button type="button" class="btn btn-primary btn-lg">Go back</button></a>
+            </div>
+        </div>
+    </div>
+
+
+  <!-- discus starts -->
+<div id="disqus_thread"></div>
+<script>
+
+// change yourdomain.in to your domain
+var disqus_config = function () {
+this.page.url = "https://yesicbap.com/blog/blog_home/{{blog.id}}/"; 
+this.page.identifier = "{{blog.id}}"; 
+};
+
+
+
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://yesicbap.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  <!-- discus ends -->
+
+
+</div>
+
+
+                            
+{% endblock content %}
+
+
+

@@ -1,0 +1,93 @@
+{% extends 'core/core.html' %}
+{% load static %}
+
+
+{% block title %} blog home {% endblock title %}
+
+{% block content %}
+      <div class="container " style="margin-bottom: 4px; margin-top: 4px;">
+        <h1>Our blogs</h1>
+        <p>feel free to check out our article</p>
+        <div class="row">
+          
+          {% if is_paginated %}
+          {% for blog in blog_list %}
+          <div class="col-sm-12 col-xs-3 col-md-6 col-lg-4  bg-light"  style="width: 100%; height: 100%;">
+            <div class="card" style="margin: 10px 0px; height: 470px; width: 100%;">
+                <img src="{{ blog.image.url }}" class="card-img-top" alt="{{ blog.title }}">
+                <div class="card-body">
+                  <h5 class="card-title">{{blog.title|truncatewords:5}}</h5>
+                  <p class="card-text">{{blog.description|truncatewords:15}}</p>
+                  <div class="row">
+                    <div class="col">
+                      <a href="{% url 'blog_home_item' blog.id %}" class="btn btn-info">read more</a>
+                    </div>
+                    <div class="col">
+                      <button type="button" class="btn btn-success ml-5">
+                        <i class="fab fa-angellist fa-lg"></i> <span class="badge badge-light">{{blog.clap}}</span>
+                      </button>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+              <!-- for pagination -->
+              <div class="container m-2">
+                <nav aria-label="pagination">
+                  <ul class="pagination">
+                    {% if page_obj.has_previous %}
+                    <li class="page-item">
+                      <a class="page-link" href="?page={{page_obj.previous_page_number}}">Previous</a>
+                    </li>
+                    {% endif %}
+
+                    <li class="page-item active" aria-current="page">
+                      <a class="page-link" href="#">{{page_obj.number}}<span class="sr-only">(current)</span></a>
+                    </li>
+                    {% if page_obj.has_next %}
+                    <li class="page-item">
+                      <a class="page-link" href="?page={{page_obj.next_page_number}}">Next</a>
+                    </li>
+                      {% endif %}
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+
+        {% else %}
+            {% for blog in blog_list %}
+            <div class="col-sm-12 col-xs-3 col-md-6 col-lg-4  bg-light"  style="width: 100%; height: 100%;">
+              <div class="card" style="margin: 10px 0px; height: 470px; width: 100%;">
+                  <img src="{{ blog.image.url }}" class="card-img-top" alt="{{ blog.title }}">
+                  <div class="card-body">
+                    <h5 class="card-title">{{blog.title|truncatewords:5}}</h5>
+                    <p class="card-text">{{blog.description|truncatewords:15}}</p>
+                    <div class="row">
+                      <div class="col">
+                        <a href="{% url 'blog_home_item' blog.id %}" class="btn btn-info">read more</a>
+                      </div>
+                      <div class="col">
+                        <button type="button" class="btn btn-success ml-5">
+                          <i class="fab fa-angellist fa-lg"></i> <span class="badge badge-light">{{blog.clap}}</span>
+                        </button>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        {% endif %}
+
+        </div>  
+      </div>
+
+
+
+
+    
+
+{% endblock content %}
+
+
+

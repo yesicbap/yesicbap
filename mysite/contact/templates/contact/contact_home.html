@@ -1,0 +1,37 @@
+{% extends 'core/core.html' %}
+{% load static %}
+
+
+{% block title %} contact home {% endblock title %}
+
+{% block content %}
+<div class="container ">
+
+    <div class="jumbotron jumbotron-fluid bg-success text-light mt-1 text-center">
+        <div class="container">
+          <h1 class="display-4">Let's connect</h1>
+          <p class="lead">A good relationship start's with a good communication</p>
+        </div>
+    </div>
+
+
+
+    <div class="card mb-1">
+        <h5 class="card-header">Contact form</h5>
+        <div class="card-body">
+          <h5 class="card-title text-secondary">Please,provide active details in order to stay connected !!!</h5>
+          <div class="form-group">
+            <form action="" method="post" novalidate class="form-group">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Subscribe" class="btn btn-outline-success btn-lg">
+            </form>
+          </div>
+        </div>
+      </div>
+   
+</div>
+{% endblock content %}
+
+
+
