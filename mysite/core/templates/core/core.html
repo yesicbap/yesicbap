@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'core/css/all.min.css' %}" />
     <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="{% static 'core/css/core.css' %}" />
     <title>{% block title %} {% endblock title %}</title>
 </head>
@@ -68,6 +69,14 @@
     <script src="{% static 'core/js/bootstrap.js' %}"></script>
     <script src="{% static 'core/js/core.js' %}"></script>
     <script id="dsq-count-scr" src="//yesicbap.disqus.com/count.js" async></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 400, // offset (in px) from the original trigger point
+            delay: 0, // values from 0 to 3000, with step 50ms
+            duration: 1000 // values from 0 to 3000, with step 50ms
+        });
+    </script>
 
 </body>
 

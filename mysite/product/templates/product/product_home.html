@@ -14,8 +14,10 @@
       {% for product in product_list %}
       <div class="col-sm-12 col-xs-3 col-md-6 col-lg-4 bg-light"  style="width: 100%; height: 100%;">
         <div class="card" style="margin: 10px 0px; height: 470px; width: 100%;">
+          <div class="myinner">
             <img src="{{ product.thumbnail.url }}" class="card-img-top" alt="{{product.name}}">
-            <div class="card-body">
+          </div>
+              <div class="card-body">
               <h5 class="card-title" >{{product.name|truncatewords:5}}</h5>
               <p class="card-text" >{{product.description|truncatewords:15}}</p>
               <a href="{% url 'product_home_item' product.id %}" class="btn btn-info">read more</a>
@@ -53,8 +55,9 @@
       {% for product in product_list %}
       <div class="col-sm-12 col-xs-3 col-md-6 col-lg-4 bg-light"  style="width: 100%; height: 100%;">
         <div class="card" style="margin: 10px 0px; height: 470px; width: 100%;">
+          <div class="myinner">
             <img src="{{ product.thumbnail.url }}" class="card-img-top" alt="{{product.name}}">
-            <div class="card-body">
+          </div>            <div class="card-body">
               <h5 class="card-title" >{{product.name|truncatewords:5}}</h5>
               <p class="card-text" >{{product.description|truncatewords:15}}</p>
               <a href="{% url 'product_home_item' product.id %}" class="btn btn-info">read more</a>
