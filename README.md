@@ -1,4 +1,4 @@
-### Hi there 👋
+# yesicbap: an official cite
 
 <!--
 **yesicbap/yesicbap** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
@@ -14,3 +14,8 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+It is a website for the official site of company yesicbap that uses Django web framework, database, HTML, CSS, bootstrap, jquery, python, and more. It consists of functionality like contact form, blog, product, the home page, and some more. There is a searching box too. I have used the animation library too for the scroll animation of the page elements.
+
+
+
